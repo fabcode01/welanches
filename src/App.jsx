@@ -1,0 +1,32 @@
+import "./App.css";
+
+
+import { Routes, Route, HashRouter } from "react-router-dom";
+
+//componentes
+import Nav from "./componentes/Nav/Nav";
+import Footer from "./componentes/Footer/Footer";
+
+//pages
+import Home from "./pages/home";
+import { Products } from "./pages/Products";
+
+function App() {
+  return (
+    <>
+      <div>
+      <HashRouter>
+        <Nav />
+        <Routes>
+          <Route path="/" element={<Home />}/>
+          <Route path='/produtos' element={<Products/>}/>
+        </Routes>
+        <Footer />
+        </HashRouter>
+        
+      </div>
+    </>
+  );
+}
+
+export default App;
