@@ -1,8 +1,6 @@
 import { useState } from "react"
 
 
-
-
 export const useFetchCep = (cep)=>{
     const baseurl = `https://viacep.com.br/ws/${cep}/json/`
 

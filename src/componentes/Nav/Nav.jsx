@@ -7,6 +7,12 @@ import home from "../../images/undraw_sweet_home_dkhr.svg";
 import { useFetchCep } from "../../hooks/useFetchCep";
 
 const Nav = () => {
+  // transitions
+
+  const[transitionModal, setTransitionModal] = useState(``)
+
+
+
   //modais e menu
   const [modal, setModal] = useState(null);
   const [modalCart, setModalCart] = useState(null);
@@ -44,7 +50,6 @@ const Nav = () => {
   //autoCartClose
 
   const autoCartClose = () => {
-    alert("chego");
     setTimeout(() => {
       setModalCart(null);
     }, 1000);
@@ -53,29 +58,43 @@ const Nav = () => {
   return (
     <>
       <div className={styles.sticky}>
-        <nav className={styles.nav_container}>
-          <Link to="/">
-            <div className={styles.brand}>
-              <h2>We</h2>
-              <h1>Lanches</h1>
-              <i class="fa-solid fa-cookie-bite"></i>
-            </div>
-          </Link>
-          <ul>
-            <li onClick={() => setModalCart(1)}>
-              <i
-                className={
-                  !modalCart
-                    ? "fa-solid fa-cart-shopping"
-                    : `fa-solid fa-cart-shopping ${styles.active}` 
-                }
-              ></i>
-            </li>
-            <li>
-              <i className="fa-solid fa-user"></i>
-            </li>
-          </ul>
-        </nav>
+        <div className={styles.resposiveMaxDiv}>
+          <nav className={styles.nav_container}>
+            <Link to="/">
+              <div className={styles.brand}>
+                <h2>We</h2>
+                <h1>Lanches</h1>
+                <i class="fa-solid fa-cookie-bite"></i>
+              </div>
+            </Link>
+            <ul>
+                <li>
+                  <form className="elementsResponsive">
+                    <input type="text" placeholder="Encontre um item"/>
+                  </form>
+                </li>
+              <li>
+              <i class="fa-solid fa-magnifying-glass"></i>
+              </li>
+              <li onClick={() => setModalCart(1)}>
+              <p  className="elementsResponsive">Carrinho</p>
+                <i
+                  className={
+                    !modalCart
+                      ? "fa-solid fa-cart-shopping"
+                      : `fa-solid fa-cart-shopping ${styles.active}`
+                  }
+          
+                ></i>
+          
+              </li>
+              <li>
+              <p className="elementsResponsive">Login</p>
+                <i className="fa-solid fa-user"></i>
+              </li>
+            </ul>
+          </nav>
+        </div>
 
         <div
           className={styles.adress_container}
@@ -159,8 +178,12 @@ const Nav = () => {
             className={styles.cart_background}
             onMouseEnter={() => autoCartClose}
             onClick={() => setModalCart(null)}
-          ></div>
-          <div className={styles.cart_container}>
+            
+          >
+          </div>
+
+          <div className={modalCart ? `${styles.cart_container} ${styles.right}` : styles.cart_container}>
+            
             <h1>SEU CARRINHO</h1>
             {!logradouro && <h4>Insira seu local</h4>}
             {logradouro && <h4>{logradouro}</h4>}
