@@ -1,0 +1,448 @@
+.sticky{
+    z-index: 200;
+    position: sticky;
+    top: 0;
+   
+}
+
+* .nav_container{
+    user-select: none;
+}
+
+.resposiveMaxDiv{
+    width: 100%;
+    background-color: white;
+    
+}
+
+.nav_container{
+    
+    display: flex;
+    
+    
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    
+   
+    
+    border-bottom: 1px solid rgba(155, 155, 155, 0.233);
+    
+
+    width: 100%;
+    max-width: 1080px;
+
+    margin: auto;
+   
+}
+
+
+
+.brand{
+    display: flex;
+    padding: 10px;
+    font-size: 1.2em;
+   
+}
+
+.brand h1{
+    color: #ff922c;
+}
+
+.nav_container ul{
+    display: flex;
+    color: #000000;
+    justify-content: center;
+
+    font-size: 1.4em;
+    list-style: none;
+
+    margin-right: 20px;
+}
+
+.nav_container ul > li{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column-reverse;
+    margin: 0 10px;
+    cursor: pointer;
+    transition: all 0.2s;
+    
+}
+
+.nav_container li p{
+    font-size: .8em;
+}
+
+.form_container{
+    display: flex;
+    border: 1px solid red;
+
+}
+
+.nav_container li > form{
+    height: 1.7em;
+    width: 400px;
+}
+
+.nav_container form > input{
+    text-align: start;
+    padding: 5px;
+    width: 100%;
+    height: 100%;
+    
+}
+
+
+
+.nav_container li:hover{
+    color: #ff922c;
+    
+
+}
+.gatilhoDropdownLogin{
+    display: relative;
+    display: inline-block;
+    
+}
+
+
+.dropDownMenu{
+    display: none;
+    position: fixed;
+    top: 40px;
+    right: 0;
+    border-radius:20px;
+    
+    flex-direction: column;
+    width: 80%;
+    max-width: 440px;
+    align-items: center;
+    gap: 10px;
+    background-color: #ff922c;
+    padding: 10px 0;
+
+    box-shadow: 0px 1px 12px 8px rgba(0, 0, 0, 0.205);
+    
+}
+
+.dropDownMenu i{
+    color: white;
+    font-size: 1.5em;
+    margin-top: 10px;
+}
+
+.dropDownMenu input{
+    border: none;
+    padding: 5px;
+    width: 80%;
+    max-width: 315px;
+    border-radius: 5px;
+}
+
+.dropDownMenu input:focus{
+    outline: none;
+    background-color: rgb(226, 226, 226);
+    
+}
+
+.dropDownMenu button{
+    background-color: #000000;
+    padding: 10px 25px;
+    width: 80%;
+    max-width: 315px;
+}
+
+.dropDownMenu button:active{
+    scale: 1.05;
+}
+
+.dropDownMenu p{
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.gatilhoDropdownLogin:hover .dropDownMenu{
+    display: flex;
+}
+
+/*  */
+
+.adress_container{
+    display: flex;
+    
+    border-bottom: 1px solid rgba(155, 155, 155, 0.233);
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    background-color: #ffff;
+    cursor: pointer;
+
+    box-shadow: 0px 6px 8px -5px rgba(0, 0, 0, 0.103);
+   
+}
+
+.adress_container p, .adress_container i{
+    color: rgb(255, 146, 44);
+    margin: 5px;
+    cursor: pointer;
+}
+
+
+
+
+/* modal de localizacao */
+
+.background_cep_modal{
+    z-index: 9000;
+    position: fixed;
+    width: 100vw;
+    height: 2500px;
+    z-index: 300;
+    
+    
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.781);
+    
+}
+
+
+
+.modal_container{
+    z-index: 13400;
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    background-color: rgb(255, 255, 255);
+
+    width: 100vw;
+    max-width: 600px;
+    height: 400px;
+    margin: auto;
+
+    border-radius: 58px 59px 0px 0px;
+    -webkit-border-radius: 58px 59px 0px 0px;
+    -moz-border-radius: 58px 59px 0px 0px;
+
+    
+    box-shadow: -2px -12px 32px -7px rgba(0, 0, 0, 0.185);
+    
+
+}
+
+.modal_container p{
+    color: #ff922c;
+    cursor: pointer;
+    margin-top: 5px;
+}
+
+.form_cep_container{
+   
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+
+   
+}
+
+.form_cep_container img{
+    width: 200px;
+    border: 1px solid rgba(255, 0, 0, 0.185);
+    border-radius: 40%;
+    margin-bottom: 25px;
+    
+    
+}
+
+.form_cep_container input{
+    padding: 10px;
+    width: 50%;
+    max-width: 400px;
+    border: none;
+    border-bottom: 1px solid #ff922c;
+}
+
+.modal_container p{
+    font-size: .8em;
+}
+
+.form_cep_container input:focus{
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #ff922c;
+}
+
+
+.form_cep_container button{
+    width: 50%;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 10px;
+    background-color: #ff922c;
+    color: #ffff;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.errorMessage{
+    font-size: 2.5em;
+    color: rgb(255, 0, 0);
+    font-weight: 400;
+}
+
+
+/* MODAL CART */
+
+.cart_background{
+    z-index: 5000;
+   
+    position: fixed;
+    top: 5em;
+    height: 2088px;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.623);
+}
+
+.cart_container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 9000;
+    position: fixed;
+    right: 0px;
+    top: 5em;
+    width: 22em;
+    height: 100%;
+    
+    background-color: rgb(255, 255, 255);
+
+    border-top: 10px solid #ff922c;
+
+    transition: all 0.5s;
+
+    animation-name: CartEntrance;
+    animation-duration: 0.5s;
+    animation-iteration-count: 1;
+
+    
+    
+}
+
+/* Modal Search */
+
+.searchOverlay{
+    display: block;
+    z-index: 1000;
+    position: fixed;
+    background-color: #00000057;
+
+    width: 100%;
+    height: 900px;
+}
+
+.searchContainer{
+    z-index: 10001;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9000;
+    position: fixed;
+    top: 120px;
+
+    width: 100%;
+    height: 80px;
+    
+
+    background-color: #ff922c;
+    box-shadow: 0px 6px 8px -5px rgba(0, 0, 0, 0.103);
+}
+
+.searchBox{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: white;
+    border-radius: 10px;
+    width: 60%;
+    max-width: 528px;
+}
+
+.searchBox input{
+    border: none;
+    padding: 10px;
+    
+    border-radius: 10px;
+    
+}
+
+.searchBox input:focus{
+    outline: none;
+}
+
+.searchBox i{
+    padding: 10px;
+    
+}
+
+
+
+
+
+/* animacoes e resposividade */
+
+
+@keyframes CartEntrance{
+    0%{
+        right: -500px;
+    }
+
+    100%{
+        right: 0px;
+    }
+}
+
+
+.cart_container h1{
+    
+    margin-top: 30px;
+}
+
+.cart_container h4{
+    color:  #ff922c;
+}
+
+.active{
+
+    color: #ff922c;
+}
+
+
+
+@media screen and (min-width: 720px){
+    .modal_container{
+        position: sticky;
+        top: 40px;
+        border-radius: 45px;
+       
+    }
+   
+    
+  }
+
+  @media screen and (min-width: 900px){
+    .searchOverlay{
+        display: none;
+    }
+
+    .searchContainer{
+        display: none;
+    }
+   
+    
+  } 
+  

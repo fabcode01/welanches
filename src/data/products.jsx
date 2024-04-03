@@ -1,0 +1,18 @@
+export const products = [
+  { id: 1, nome: "Pão de queijo" },
+  { id: 2, nome: "Coxinha", sabores: ["carne", "frango"] },
+  { id: 3, nome: "Pastel", sabores: ["carne", "frango", "pizza", "3 queijos"] },
+  { id: 7, nome: "Tapioca" },
+  { id: 8, nome: "Cuscuz" },
+  { id: 9, nome: "Bolo" },
+  { id: 10, nome: "Empada", sabores: ["carne", "frango"] },
+  { id: 11, nome: "Brigadeiro" },
+  { id: 12, nome: "Quibebe" },
+  { id: 13, nome: "Vatapá" },
+  { id: 14, nome: "Cuscuz nordestino" },
+  { id: 15, nome: "Acarajé" },
+  { id: 16, nome: "Moqueca" },
+  { id: 17, nome: "Tapioca", sabores: ["carne", "ovo"] },
+  { id: 18, nome: "Bolinho de bacalhau" },
+  { id: 19, nome: "Chimarrão" },
+];
