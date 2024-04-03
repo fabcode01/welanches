@@ -5,7 +5,7 @@ import Nav from "./componentes/Nav/Nav";
 import Footer from "./componentes/Footer/Footer";
 
 //pages
-import Home from "./pages/home";
+import Home from "./pages/Home";
 import { Products } from "./pages/Products";
 
 function App() {
