@@ -7,7 +7,11 @@ export const Products = () => {
   const [loading, setLoading] = useState(null);
 
   const [backToTop, setBackToTop] = useState(null);
+ 
 
+
+
+  // listar produtos
   const fetchData = async () => {
     try {
       setLoading(true);
@@ -18,10 +22,10 @@ export const Products = () => {
     } catch (error) {}
   };
 
-  // listar produtos ao carregar página
   useEffect(() => {
     fetchData();
   }, []);
+  // Fim listar produtos
 
   // Back-to-top
   function myFunction() {
@@ -39,8 +43,9 @@ export const Products = () => {
   function handleBackToTop() {
     window.scrollTo(0, 0);
   }
-
   // Fim Back to top
+
+
 
   return (
     <div className={styles.mainProdutos}>
@@ -58,7 +63,7 @@ export const Products = () => {
 
               <div className={styles.precoAdd}>
                 <p className={styles.preco}>R$ {produto.preco}</p>
-                <p className={styles.addIcon}>+</p>
+                <p id="item" className={styles.addIcon}>+</p>
               </div>
             </li>
           ))}

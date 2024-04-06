@@ -30,7 +30,7 @@
     height: 220px;
 
     box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.205);
-    cursor: pointer;
+ 
 
     
 
@@ -54,12 +54,38 @@
 }
 
 .addIcon{
+    display: flex;
+    align-items: center;
+    
     background-color: #ff922c;
     font-size: 1.5em;
     padding: 5px 10px;
     border-radius: 10px;
     color: white;
     font-weight: bold;
+
+    transition: all 0.5s;
+}
+
+.addIcon:active{
+    scale: 1.05;
+}
+
+.addIcon::after{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    font-size: 0.5em;
+    left: 15px;
+    top: -15px;
+    background-color: black;
+    width: 15px; height: 15px;
+    padding: 5px;
+    border-radius: 50%;
+    
+
+    transition: all 0.5s;
 }
 
 .preco{
