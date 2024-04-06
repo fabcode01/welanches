@@ -1,0 +1,108 @@
+.mainProdutos{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.productsContainer{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    width: 100%;
+  
+    margin-top: 30px;
+}
+
+
+.productsContainer li{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    text-align: center;
+    
+    overflow: hidden;
+    border-radius: 20px;
+    background-color: #f3f3f3;;
+    width: 40%;
+    height: 220px;
+
+    box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.205);
+    cursor: pointer;
+
+    
+
+    user-select: none;
+
+  
+}
+
+
+
+
+.nomeProduto{
+    
+    
+    
+}
+.precoAdd{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.addIcon{
+    background-color: #ff922c;
+    font-size: 1.5em;
+    padding: 5px 10px;
+    border-radius: 10px;
+    color: white;
+    font-weight: bold;
+}
+
+.preco{
+    text-align: center;
+    
+    padding: 2px 5px;
+    width: 100%;
+    border-radius: 10px;
+    color: #ff922c;
+    font-weight: bold;
+}
+
+.imgProduto{
+    width: 100%;
+    height: 90px;
+    border-radius: 20px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+
+.backToTopBtn{
+    display: flex;
+    position: fixed;
+
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 50%;
+
+    z-index: 10000;
+    
+    bottom: 30px;
+    right: 30px;
+    color: white;
+    width: 50px; height: 50px;
+
+    background-color: #ff922c;
+    cursor: pointer;
+
+}
+
+.backToTopBtn:active{
+    scale:  1.05;
+}
+

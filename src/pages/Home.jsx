@@ -1,11 +1,15 @@
 import { Link } from "react-router-dom";
 
-import React from "react";
+import {useEffect } from "react";
 import Foryou from "../componentes/ForYouItens/Foryou";
 import PopularSearch from "../componentes/PopularSearchCarousel/PopularSearch";
 import Parceiros from "../componentes/Parceiros/Parceiros";
 
+
+
 const Home = () => {
+  
+
   return (
     <div className="home">
       <Foryou />

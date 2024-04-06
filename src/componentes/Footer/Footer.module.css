@@ -15,7 +15,7 @@
     font-size: .8em;
     height: 200px;
 }
-.footer_container p, ul{
+.footer_container p{
     color: #ffffff;
 }
 
@@ -24,6 +24,7 @@
     margin-top: 30px;
     list-style: none;
     font-size: 1.5em;
+    color: #ffffff;
 
 }
 
