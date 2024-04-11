@@ -304,7 +304,7 @@
     position: fixed;
     top: 5em;
     height: 2088px;
-    width: 100vw;
+    width: 100%;
     background-color: rgba(0, 0, 0, 0.623);
 }
 
@@ -330,7 +330,22 @@
     animation-iteration-count: 1;
 
     
+}
+
+.cartQnt{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    left: -10px;
+    top: -6px;
+    font-size: 0.5em;
+    background-color: #ff922c;
+    color: white;
     
+    width: 15px; height: 15px;
+    border-radius: 50%;
+
 }
 
 /* Modal Search */

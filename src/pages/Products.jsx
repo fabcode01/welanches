@@ -1,15 +1,24 @@
-import { useEffect } from "react";
+import { useEffect, useReducer, useContext } from "react";
 import { useState } from "react";
 import styles from "./Products.module.css";
+import { CartContext } from "../context/CartContext";
+
+
+
+
+
 
 export const Products = () => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(null);
-
+  const[itensCart, setItensCart] = useState([])
   const [backToTop, setBackToTop] = useState(null);
+
+
+  
+
  
-
-
+   
 
   // listar produtos
   const fetchData = async () => {
@@ -46,6 +55,62 @@ export const Products = () => {
   // Fim Back to top
 
 
+   // adicionar itens no carrinho
+
+const{addCartContext, cartItems} = useContext(CartContext)
+ const initState = [];
+
+ function reducer(state, action){
+  
+  switch(action.type){
+  
+    case 'ADD':
+      if(state.some((element)=>element.id == action.id)){
+        return state
+      }else{
+        return [...state,
+          {
+            nome: action.nome,
+            id: action.id
+          }
+        ]
+  
+      }
+      
+      
+      
+      
+      
+ }
+}
+
+  const [state, dispatch] = useReducer(reducer, initState)
+
+  
+  // add no carrinho
+  
+
+
+  const addCart = (nome, id)=>{
+      dispatch({type: 'ADD', nome, id,})
+    
+      
+      
+      // state.forEach((element)=>{
+      //   if(element.id == id){
+      //     return
+      //   } else{
+      //     dispatch({type: 'ADD', nome, id,})
+          
+          
+      // }
+      //  })
+      
+    }
+  
+    useEffect(()=>{
+      addCartContext(state)
+    },[state])
 
   return (
     <div className={styles.mainProdutos}>
@@ -63,7 +128,8 @@ export const Products = () => {
 
               <div className={styles.precoAdd}>
                 <p className={styles.preco}>R$ {produto.preco}</p>
-                <p id="item" className={styles.addIcon}>+</p>
+                <p onClick={()=> addCart(produto.nome, produto.id)} id="item" className={styles.addIcon}>+</p>
+                
               </div>
             </li>
           ))}
@@ -77,6 +143,8 @@ export const Products = () => {
           <i className="fa-solid fa-up-long"></i>
         </div>
       )}
+
+     
     </div>
   );
 };

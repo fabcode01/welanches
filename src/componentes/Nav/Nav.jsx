@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import styles from "./Nav.module.css";
 import home from "../../images/undraw_sweet_home_dkhr.svg";
+import { CartContext } from "../../context/CartContext";
 
 //hooks cep
 import { useFetchCep } from "../../hooks/useFetchCep";
@@ -51,6 +52,10 @@ const Nav = () => {
     }, 1000);
   };
 
+  const{cartItems} = useContext(CartContext)
+  useEffect(()=>{
+  },[cartItems])
+
   return (
     <>
       <div className={styles.sticky}>
@@ -82,6 +87,7 @@ const Nav = () => {
                   
                   }}
                 ></i>
+                
               </li>
               <li
                 onClick={() => {
@@ -89,7 +95,7 @@ const Nav = () => {
                   setModalSearch(null);
                 }}
               >
-                <p className="elementsResponsive">Carrinho</p>
+                
                 <i
                   className={
                     !modalCart
@@ -97,7 +103,9 @@ const Nav = () => {
                       : `fa-solid fa-cart-shopping ${styles.active}`
                   }
                 ></i>
+               
               </li>
+              <span className={styles.cartQnt}>{cartItems.length}</span>
               <li
                 className={styles.gatilhoDropdownLogin}
                 onMouseEnter={() => {
@@ -106,7 +114,7 @@ const Nav = () => {
                   setModalSearch(null);
                 }}
               >
-                <p className="elementsResponsive">Login</p>
+               
                 <i className="fa-solid fa-user"></i>
 
                 <div className={styles.dropDownMenu}>
@@ -222,7 +230,18 @@ const Nav = () => {
             <h1>SEU CARRINHO</h1>
             {!logradouro && <h4>Insira seu local</h4>}
             {logradouro && <h4>{logradouro}</h4>}
+
+            
+            {/* aqui */}
+            {cartItems && cartItems.map((items)=>(
+              <div>
+                <p>{items.nome}</p>
+              </div>
+            ))}
+            
           </div>
+           
+
         </div>
       )}
 
