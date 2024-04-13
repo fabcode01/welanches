@@ -8,7 +8,7 @@ import { CartContext } from "../context/CartContext";
 
 
 
-export const Products = () => {
+export const Products = ({getSavedData}) => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(null);
   const[itensCart, setItensCart] = useState([])
@@ -57,14 +57,17 @@ export const Products = () => {
 
    // adicionar itens no carrinho
 
-const{addCartContext, cartItems} = useContext(CartContext)
- const initState = [];
+const{addCartContext, cartItems, setCartItems} = useContext(CartContext)
+
+  
+ const initState = getSavedData()
 
  function reducer(state, action){
   
   switch(action.type){
   
     case 'ADD':
+      
       if(state.some((element)=>element.id == action.id)){
         return state
       }else{
@@ -74,8 +77,8 @@ const{addCartContext, cartItems} = useContext(CartContext)
             id: action.id
           }
         ]
-  
       }
+
       
       
       
@@ -94,23 +97,14 @@ const{addCartContext, cartItems} = useContext(CartContext)
   const addCart = (nome, id)=>{
       dispatch({type: 'ADD', nome, id,})
     
-      
-      
-      // state.forEach((element)=>{
-      //   if(element.id == id){
-      //     return
-      //   } else{
-      //     dispatch({type: 'ADD', nome, id,})
-          
-          
-      // }
-      //  })
-      
     }
   
     useEffect(()=>{
       addCartContext(state)
     },[state])
+
+
+
 
   return (
     <div className={styles.mainProdutos}>

@@ -25,6 +25,8 @@ const Nav = () => {
     bairro,
   } = useFetchCep(cep);
 
+  const[itensNoCarrinho, setItensNoCarrinho] = useState([])
+
   const handleSearchCep = (e) => {
     e.preventDefault();
 
@@ -44,17 +46,35 @@ const Nav = () => {
     setModal(null);
   }, [logradouro, localidade, bairro]);
 
-  //autoCartClose
 
-  const autoCartClose = () => {
-    setTimeout(() => {
-      setModalCart(null);
-    }, 1000);
-  };
 
-  const{cartItems} = useContext(CartContext)
+  const{cartItems, setCartItems} = useContext(CartContext)
   useEffect(()=>{
   },[cartItems])
+
+  // remover item do carrinho
+
+  const handleRemoveCart = (id)=>{
+      const items = JSON.parse(localStorage.getItem('prodCart'))
+      const newItems = items.filter((item)=>item.id !== id)
+
+      const data = JSON.stringify(newItems)
+      localStorage.setItem('prodCart', data)
+      setCartItems(newItems)
+
+
+  }
+
+ 
+
+
+
+
+
+
+ 
+
+  
 
   return (
     <>
@@ -105,7 +125,8 @@ const Nav = () => {
                 ></i>
                
               </li>
-              <span className={styles.cartQnt}>{cartItems.length}</span>
+              {cartItems.length > 0 ? <span className={styles.cartQnt}>{cartItems.length}</span> : ''}
+              
               <li
                 className={styles.gatilhoDropdownLogin}
                 onMouseEnter={() => {
@@ -234,8 +255,10 @@ const Nav = () => {
             
             {/* aqui */}
             {cartItems && cartItems.map((items)=>(
-              <div>
+              <div className={styles.cartItemsContainer} key={items.id}>
                 <p>{items.nome}</p>
+                <span onClick={()=>{handleRemoveCart(items.id)}}> X</span>
+                
               </div>
             ))}
             

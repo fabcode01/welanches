@@ -348,6 +348,30 @@
 
 }
 
+.cartItemsContainer{
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.cartItemsContainer p{
+    margin: 10px 0px;
+}
+
+.cartItemsContainer span{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: bold;
+    padding: 2px;
+    width: 20px; height: 20px;
+    background-color: red;
+
+    cursor: pointer;
+}
+
+
 /* Modal Search */
 
 .searchOverlay{
